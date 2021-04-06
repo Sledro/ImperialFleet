@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "d67a73f4-8ed5-43d9-9b4b-05f43953b784",
+		"name": "ImperalFleet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Spaceship",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Devastator\",\n    \"class\": \"Star Destroyer\",\n    \"crew\": 35000,\n    \"image\": \"https:\\\\url.to.image\",\n    \"value\": 1999.99,\n    \"status\": \"operational\",\n    \"armament\": [\n        {\n            \"title\": \"Turbo Laser\",\n            \"qty\": \"60\"\n        },\n        {\n            \"title\": \"Laser\",\n            \"qty\": \"7\"\n        },\n        {\n            \"title\": \"Turbo\",\n            \"qty\": \"99\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/spaceship",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"spaceship"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Spaceship",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/spaceship/:id",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"spaceship",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "17"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Spaceships",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Devastator\",\n    \"class\": \"Star Destroyer\",\n    \"status\": \"operational\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/spaceship/list",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"spaceship",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Spaceship",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/spaceship/:id",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"spaceship",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
